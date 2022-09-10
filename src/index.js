@@ -1,13 +1,24 @@
-import React from 'react';
+import React, {createContext} from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {UserStorage} from "./storage/userStorage";
+
+export const Context = createContext(null)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+      <Context.Provider value={{
+          user: new UserStorage()
+      }
+      }>
+      <BrowserRouter>
+          <App />
+      </BrowserRouter>
+      </Context.Provider>
   </React.StrictMode>
 );
 
