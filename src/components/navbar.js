@@ -9,11 +9,12 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import Modal from '../modal/Modal'
 import {Search,SearchIconWrapper,StyledInputBase} from "./Search"
 import Auth from "../pages/authPage"
-
+import UserPage from "../pages/userPage"
 
 
 const Navbar = () => {
     const [active,setActive]=useState(false);
+    const username=localStorage.username
     const OpenAvatar=()=>{
         setActive(true);
     }
@@ -71,12 +72,12 @@ const Navbar = () => {
                       <Box sx={{ flexGrow: 0,position: "absolute",
                           left:"auto",
                           right: 2}} onClick={OpenAvatar}>
-                          <Avatar alt="Remy Sharp"  />
+                          <Avatar alt="Remy Sharp" style={{background:'gold'}}>{username && username.substr(0,2).toUpperCase()}</Avatar>
                       </Box>
                   </Toolbar>
               </Container>
           </AppBar>
-            <Modal active={active} setActive={setActive} content={<Auth/>}></Modal>
+            <Modal active={active} setActive={setActive} content={username ? <UserPage/>:<Auth/>}/>
         </div>
     );
 };

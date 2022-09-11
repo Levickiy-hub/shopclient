@@ -26,6 +26,7 @@ export const authHook= ()=>{
         localStorage.removeItem('username');
         localStorage.removeItem('userid');
         localStorage.removeItem('userrole');
-    },[])
+        user.setIsAuth(false);
+    },[user])
     return {login,logout}
 }
