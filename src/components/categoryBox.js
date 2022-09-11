@@ -13,14 +13,6 @@ const theme = createTheme({
             main: '#fdd835',
             darker: '#424242',
         },
-        // secondary: {
-        //     main: '#616161',
-        //     darker: '#424242',
-        // },
-        // neutral: {
-        //     main: '#64748B',
-        //     contrastText: '#fff',
-        // },
     },
 });
 const CategoryBox = ({content}) => {
