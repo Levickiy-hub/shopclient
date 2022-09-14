@@ -1,6 +1,6 @@
 import React from 'react';
 import {Box, Button} from "@mui/material";
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import {createTheme, ThemeProvider} from '@mui/material/styles';
 import '../css/category.css'
 
 
@@ -19,7 +19,7 @@ const CategoryBox = ({content}) => {
     return (
         <Box>
             <ThemeProvider theme={theme}>
-                <Button variant="contained" className={"categoryButton"}>
+                <Button variant="contained" className={"categoryButton"} style={{position:"revert"}}>
                     {content.name}
                 </Button>
             </ThemeProvider>
